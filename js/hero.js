@@ -39,6 +39,7 @@
 
     const chars             = document.querySelectorAll('#hero-name .char');
     const tag               = document.querySelector('.hero-tag');
+    const linkedin          = document.querySelector('.hero-linkedin');
     const typedWrapper      = document.querySelector('.hero-typed');
     const sub               = document.querySelector('.hero-sub');
     const ctas              = document.querySelector('.hero-ctas');
@@ -106,6 +107,13 @@
     tl.call(() => {
       if (underlinePath) underlinePath.classList.add('drawn');
     }, null, 1.75);
+
+    // LinkedIn badge
+    tl.fromTo(linkedin,
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' },
+      1.95
+    );
 
     // Typed subtitle
     tl.fromTo(typedWrapper,
