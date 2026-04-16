@@ -69,6 +69,12 @@
   user-select: none;
 }
 
+/* Each word on its own line */
+#hero-name .name-line {
+  display: block;
+  white-space: nowrap;
+}
+
 /* Individual character spans injected by hero.js */
 #hero-name .char {
   display: inline-block;

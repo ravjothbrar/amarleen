@@ -2,20 +2,16 @@
   'use strict';
 
   function splitHeroName() {
-    const el = document.getElementById('hero-name');
-    if (!el) return;
-    const text = el.textContent;
-    el.textContent = '';
-    [...text].forEach((ch) => {
-      const sp = document.createElement('span');
-      if (ch === ' ') {
-        sp.className = 'char-space';
-        sp.textContent = '\u00A0';
-      } else {
+    const lines = document.querySelectorAll('#hero-name .name-line');
+    lines.forEach(line => {
+      const text = line.textContent.trim();
+      line.textContent = '';
+      [...text].forEach(ch => {
+        const sp = document.createElement('span');
         sp.className = 'char';
         sp.textContent = ch;
-      }
-      el.appendChild(sp);
+        line.appendChild(sp);
+      });
     });
   }
 
