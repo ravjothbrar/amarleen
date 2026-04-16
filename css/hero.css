@@ -1,0 +1,184 @@
+/* ============================================================
+   hero.css — hero section, char spans, turbine, scroll arrow
+   ============================================================ */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-primary);
+  padding-top: var(--nav-height);
+}
+
+/* Subtle grid lines */
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(34, 197, 94, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.025) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+
+/* Radial green glow behind name */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(34, 197, 94, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 920px;
+  padding: 2rem;
+}
+
+/* ── Tag line ── */
+.hero-tag {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--green-500);
+  margin-bottom: 1.4rem;
+  opacity: 0;
+}
+
+/* ── Name ── */
+#hero-name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 9vw, 8rem);
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  line-height: 1;
+  color: var(--text-primary);
+  margin-bottom: 0;
+  user-select: none;
+}
+
+/* Individual character spans injected by hero.js */
+#hero-name .char {
+  display: inline-block;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+#hero-name .char-space {
+  display: inline-block;
+  width: 0.28em;
+}
+
+/* Glow burst applied per-char in JS */
+.char-glow {
+  animation: charGlowFade 0.65s ease-out forwards;
+}
+
+/* ── SVG underline ── */
+.hero-underline-container {
+  width: min(65%, 540px);
+  margin: 0.6rem auto 1.8rem;
+  opacity: 0;
+}
+.hero-underline-svg {
+  width: 100%;
+  height: 10px;
+  overflow: visible;
+}
+#hero-underline-path {
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  transition: stroke-dashoffset 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#hero-underline-path.drawn {
+  stroke-dashoffset: 0;
+}
+
+/* ── Typed subtitle ── */
+.hero-typed {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 500;
+  color: var(--green-400);
+  margin-bottom: 0.85rem;
+  min-height: 2rem;
+  opacity: 0;
+}
+.hero-typed .typed-cursor { color: var(--green-500); }
+
+/* ── Sub paragraph ── */
+.hero-sub {
+  font-size: clamp(0.88rem, 1.5vw, 1.02rem);
+  color: rgba(240, 253, 244, 0.55);
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.75;
+  opacity: 0;
+}
+
+/* ── CTAs ── */
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+}
+
+/* ── Wind turbine ── */
+.wind-turbine-container {
+  position: absolute;
+  bottom: 4.5rem;
+  right: 2.5rem;
+  opacity: 0.32;
+  z-index: 1;
+  cursor: default;
+  transition: opacity 0.4s;
+}
+.wind-turbine-container:hover { opacity: 0.65; }
+
+.wind-turbine {
+  width: 82px;
+  height: 112px;
+}
+
+.turbine-blades {
+  animation: turbineSpin 5s linear infinite;
+  transform-origin: 60px 80px;
+}
+
+/* ── Scroll arrow ── */
+.scroll-indicator {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.scroll-arrow {
+  width: 18px;
+  height: 18px;
+  border-right: 2px solid var(--green-500);
+  border-bottom: 2px solid var(--green-500);
+  transform: rotate(45deg);
+  animation: scrollBounce 1.6s ease-in-out infinite;
+  opacity: 0.65;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .wind-turbine-container { right: 1rem; bottom: 3.5rem; }
+  .hero-ctas { gap: 0.75rem; }
+  .hero-sub { max-width: 90%; }
+}
