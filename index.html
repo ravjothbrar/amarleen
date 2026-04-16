@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amarleen Brar — Mechanical Engineer</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">AB</a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#awards" class="nav-link">Awards</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#experience" class="mobile-link">Experience</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#awards" class="mobile-link">Awards</a></li>
+      <li><a href="#education" class="mobile-link">Education</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Section dot indicators -->
+  <nav class="section-dots" id="section-dots" aria-label="Section navigation">
+    <a href="#hero"       class="dot active" data-section="hero"       title="Top"></a>
+    <a href="#about"      class="dot"        data-section="about"      title="About"></a>
+    <a href="#experience" class="dot"        data-section="experience" title="Experience"></a>
+    <a href="#projects"   class="dot"        data-section="projects"   title="Projects"></a>
+    <a href="#skills"     class="dot"        data-section="skills"     title="Skills"></a>
+    <a href="#awards"     class="dot"        data-section="awards"     title="Awards"></a>
+    <a href="#education"  class="dot"        data-section="education"  title="Education"></a>
+    <a href="#contact"    class="dot"        data-section="contact"    title="Contact"></a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <div class="hero-bg-grid"></div>
+
+    <div class="hero-content">
+      <p class="hero-tag">Mechanical Engineer &middot; University of Warwick</p>
+
+      <h1 id="hero-name">AMARLEEN BRAR</h1>
+
+      <div class="hero-underline-container">
+        <svg class="hero-underline-svg" viewBox="0 0 600 8" preserveAspectRatio="none">
+          <path id="hero-underline-path"
+            d="M0 4 Q150 0 300 4 Q450 8 600 4"
+            stroke="#22c55e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="hero-typed">
+        <span id="typed-text"></span>
+      </div>
+
+      <p class="hero-sub">
+        Passionate about engineering practical solutions that make a meaningful impact on our world.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#experience" class="btn btn-primary">View My Work</a>
+        <a href="#contact"    class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Animated wind turbine -->
+    <div class="wind-turbine-container" title="Hover to spin up">
+      <svg class="wind-turbine" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Tower -->
+        <polygon points="56,158 64,158 62,82 58,82" fill="#22c55e" opacity="0.55"/>
+        <!-- Hub -->
+        <circle cx="60" cy="80" r="5" fill="#4ade80"/>
+        <!-- Blades (CSS-animated group) -->
+        <g class="turbine-blades">
+          <ellipse cx="60" cy="44" rx="5.5" ry="34" fill="#22c55e" transform="rotate(0,60,80)"/>
+          <ellipse cx="60" cy="44" rx="5.5" ry="34" fill="#22c55e" transform="rotate(120,60,80)"/>
+          <ellipse cx="60" cy="44" rx="5.5" ry="34" fill="#22c55e" transform="rotate(240,60,80)"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Scroll arrow -->
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">About</h2>
+      <div class="about-grid">
+        <div class="about-bio" data-aos="fade-up" data-aos-delay="100">
+          <p>
+            Passionate mechanical engineering student with a strong analytical background looking to
+            apply my knowledge and skills to develop practical solutions that can make a meaningful
+            impact on our world.
+          </p>
+          <p>
+            Currently serving as Director of Partnerships for 180 Degrees Consulting Warwick, while
+            pursuing my MEng in Mechanical Engineering at the University of Warwick — with a predicted
+            first-class degree.
+          </p>
+        </div>
+        <div class="about-stats" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-tile">
+            <span class="stat-number">MEng</span>
+            <span class="stat-label">Mechanical Engineering</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-number">1st</span>
+            <span class="stat-label">Predicted Grade</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-number">4 A*s</span>
+            <span class="stat-label">A-Level Results</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-number">2024</span>
+            <span class="stat-label">IET Future Talent Award</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       EXPERIENCE
+  ═══════════════════════════════════════════ -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Experience</h2>
+
+      <div class="filter-buttons" data-aos="fade-up" data-aos-delay="60">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="engineering">Engineering</button>
+        <button class="filter-btn" data-filter="consulting">Consulting</button>
+        <button class="filter-btn" data-filter="leadership">Leadership</button>
+      </div>
+
+      <div class="timeline">
+
+        <!-- Deloitte -->
+        <div class="timeline-item" data-category="consulting" data-aos="fade-up">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Spring Intern &mdash; Strategy, Risk &amp; Technology</h3>
+              <span class="timeline-company">Deloitte</span>
+            </div>
+            <span class="timeline-date">Apr 2025 &middot; 1 mo &middot; Manchester &middot; On-site</span>
+            <ul class="timeline-bullets">
+              <li>Applied analytical frameworks to assess business cases and evaluate investment opportunities</li>
+              <li>Developed proficiency in structured analytical approaches including MECE problem-solving and data-driven decision making</li>
+              <li>Collaborated in teams to analyse complex datasets and present quantitative recommendations to senior partners</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Valuation</span>
+              <span class="tag">Problem Solving</span>
+              <span class="tag">MECE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 180DC Director -->
+        <div class="timeline-item" data-category="consulting leadership" data-aos="fade-up">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Director of Partnerships</h3>
+              <span class="timeline-company">180 Degrees Consulting Warwick CIC</span>
+            </div>
+            <span class="timeline-date">Mar 2025 &ndash; Present &middot; 1 yr 2 mos &middot; Part-time</span>
+            <ul class="timeline-bullets">
+              <li>Identifying, securing and managing partnerships with societies and corporate entities</li>
+              <li>Organising and developing events with partners and renewing agreements</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Strategy</span>
+              <span class="tag">Corporate Partnership Development</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Warwick Sikh Society -->
+        <div class="timeline-item" data-category="leadership" data-aos="fade-up">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Treasurer</h3>
+              <span class="timeline-company">Warwick Sikh Society</span>
+            </div>
+            <span class="timeline-date">Apr 2025 &ndash; Present &middot; 1 yr 1 mo &middot; Freelance</span>
+            <ul class="timeline-bullets">
+              <li>Managing finances and events budgeting for the society</li>
+              <li>Finding and leading sponsorship relationships</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Money Management</span>
+              <span class="tag">Account Management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 180DC Associate -->
+        <div class="timeline-item" data-category="consulting" data-aos="fade-up">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Associate Consultant</h3>
+              <span class="timeline-company">180 Degrees Consulting Warwick CIC</span>
+            </div>
+            <span class="timeline-date">Oct 2024 &ndash; Sep 2025 &middot; 1 yr &middot; Part-time</span>
+            <ul class="timeline-bullets">
+              <li>Awarded &ldquo;Most Valuable Associate Consultant&rdquo; and &ldquo;Project of the Cycle&rdquo;</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Strategy</span>
+              <span class="tag">Quantitative Research</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Warwick Racing -->
+        <div class="timeline-item" data-category="engineering" data-aos="fade-up">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Battery Team Member</h3>
+              <span class="timeline-company">Warwick Racing</span>
+            </div>
+            <span class="timeline-date">Oct 2024 &ndash; Present &middot; 1 yr 7 mos &middot; Part-time</span>
+            <ul class="timeline-bullets">
+              <li>Creating the primary energy source of the vehicle</li>
+              <li>Combining mechanical, high voltage and low voltage electronics to improve efficiency</li>
+              <li>Working across design, simulation, prototyping and testing</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Battery Systems</span>
+              <span class="tag">HV Electronics</span>
+              <span class="tag">Prototyping</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Warwick Hyperloop -->
+        <div class="timeline-item" data-category="engineering" data-aos="fade-up">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Propulsion &amp; Levitation Team Member</h3>
+              <span class="timeline-company">Warwick Hyperloop</span>
+            </div>
+            <span class="timeline-date">Sep 2024 &ndash; Present &middot; 1 yr 8 mos &middot; Part-time</span>
+            <ul class="timeline-bullets">
+              <li>Researching and designing innovative magnetic propulsion and levitation systems for the pod</li>
+              <li>Manufacturing and prototype testing in workshop</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Magnetic Levitation</span>
+              <span class="tag">Propulsion Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEM Project -->
+        <div class="timeline-item" data-category="leadership" data-aos="fade-up">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Executive STEAM Youth Director</h3>
+              <span class="timeline-company">The STEM Project</span>
+            </div>
+            <span class="timeline-date">Feb 2023 &ndash; Mar 2025 &middot; 2 yrs 2 mos &middot; Freelance</span>
+            <div class="tags">
+              <span class="tag">Problem Solving</span>
+              <span class="tag">Teamwork</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.timeline -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PROJECTS
+  ═══════════════════════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card-band"></div>
+          <div class="project-card-body">
+            <h3>Evaluating Batteries &amp; Energy Storage Systems for Future Usage</h3>
+            <span class="project-date">Sep 2022 &ndash; Jun 2023</span>
+            <p>
+              Extended research project investigating the mechanical and chemical challenges of lithium-ion
+              batteries and the future suitability of large-scale energy storage systems. Awarded a Distinction.
+            </p>
+            <div class="tags">
+              <span class="tag">Energy</span>
+              <span class="tag">Research</span>
+              <span class="tag">Distinction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-card-band"></div>
+          <div class="project-card-body">
+            <h3>Digital Academy &mdash; Get Started with AI</h3>
+            <span class="project-date">Jan 2023 &ndash; Mar 2023</span>
+            <p>
+              Completed a structured Digital Academy programme developing foundational knowledge in
+              artificial intelligence concepts and real-world applications.
+            </p>
+            <div class="tags">
+              <span class="tag">AI</span>
+              <span class="tag">Digital Skills</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SKILLS
+  ═══════════════════════════════════════════ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skills-group" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="skills-group-title">Engineering</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Battery Systems</span>
+            <span class="skill-pill">Mechanical Design</span>
+            <span class="skill-pill">Simulation &amp; Prototyping</span>
+            <span class="skill-pill">High Voltage Electronics</span>
+            <span class="skill-pill">Low Voltage Electronics</span>
+            <span class="skill-pill">Magnetic Levitation</span>
+            <span class="skill-pill">Magnetic Propulsion</span>
+            <span class="skill-pill">Workshop Manufacturing</span>
+          </div>
+        </div>
+
+        <div class="skills-group" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="skills-group-title">Professional</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">MECE Problem-Solving</span>
+            <span class="skill-pill">Analytical Frameworks</span>
+            <span class="skill-pill">Business Case Assessment</span>
+            <span class="skill-pill">Partnership Management</span>
+            <span class="skill-pill">Financial Management</span>
+            <span class="skill-pill">Stakeholder Communication</span>
+            <span class="skill-pill">Quantitative Research</span>
+            <span class="skill-pill">Data-Driven Decision Making</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       AWARDS
+  ═══════════════════════════════════════════ -->
+  <section id="awards" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Awards &amp; Recognition</h2>
+      <div class="awards-grid">
+
+        <div class="award-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="award-accent"></div>
+          <div class="award-icon">&#9733;</div>
+          <h3>IET Future Talent Award</h3>
+          <p class="award-issuer">Institution of Engineering and Technology</p>
+          <p class="award-year">2024</p>
+        </div>
+
+        <div class="award-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="award-accent"></div>
+          <div class="award-icon">&#9733;</div>
+          <h3>Women in Engineering Scholar</h3>
+          <p class="award-issuer">University of Warwick</p>
+          <p class="award-year">2024</p>
+        </div>
+
+        <div class="award-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="award-accent"></div>
+          <div class="award-icon">&#9733;</div>
+          <h3>Most Valuable Associate Consultant</h3>
+          <p class="award-issuer">180 Degrees Consulting Warwick</p>
+          <p class="award-year">2025</p>
+        </div>
+
+        <div class="award-card" data-aos="zoom-in" data-aos-delay="400">
+          <div class="award-accent"></div>
+          <div class="award-icon">&#9733;</div>
+          <h3>Project of the Cycle</h3>
+          <p class="award-issuer">180 Degrees Consulting Warwick</p>
+          <p class="award-year">2025</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       EDUCATION
+  ═══════════════════════════════════════════ -->
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Education</h2>
+      <div class="education-grid">
+
+        <div class="education-card" data-aos="fade-right">
+          <div class="edu-header">
+            <div class="edu-initials">UW</div>
+            <div>
+              <h3>University of Warwick</h3>
+              <p class="edu-degree">Masters of Engineering &mdash; MEng, Mechanical Engineering</p>
+            </div>
+          </div>
+          <p class="edu-date">Sep 2024 &ndash; Jul 2028</p>
+          <p class="edu-grade">Grade: <strong>Predicted 1st</strong></p>
+          <p class="edu-activities">
+            Activities: Warwick Racing, Warwick Lacrosse, Warwick Debate,
+            180 Degrees Consulting Warwick, Warwick Hyperloop
+          </p>
+        </div>
+
+        <div class="education-card" data-aos="fade-left">
+          <div class="edu-header">
+            <div class="edu-initials">HG</div>
+            <div>
+              <h3>Haberdashers&rsquo; Girls&rsquo; School</h3>
+              <p class="edu-degree">A Levels</p>
+            </div>
+          </div>
+          <p class="edu-date">Sep 2022 &ndash; Jul 2024</p>
+          <p class="edu-grade">Grade: <strong>4 A*s</strong> in Physics, Chemistry, Maths &amp; Further Maths</p>
+          <ul class="edu-highlights">
+            <li>Extended Research Project (Distinction): &ldquo;Evaluating batteries and energy storage systems for future usage&rdquo;</li>
+            <li>Head Chair at HABS MUN 2023</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container contact-container" data-aos="fade-up">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="contact-text">
+        Interested in collaborating or want to learn more? Connect on LinkedIn.
+      </p>
+      <a href="https://www.linkedin.com/in/amarleen-brar/"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-primary btn-lg">
+        Connect on LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-copy">&copy; 2025 Amarleen Brar</span>
+      <span class="footer-credit">
+        Created by <a href="https://ravjothbrar.com/" target="_blank" rel="noopener noreferrer">Ravjoth Brar</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- ── Scripts ── -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="js/energyAnimation.js"></script>
+  <script src="js/scrollAnimations.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
