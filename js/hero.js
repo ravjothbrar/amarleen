@@ -78,9 +78,11 @@
           // Whole-name green colour pulse after glow sequence
           const glowSequenceDuration = chars.length * 22 + 120;
           setTimeout(() => {
+            const baseColor = getComputedStyle(document.documentElement)
+              .getPropertyValue('--text-primary').trim() || '#f0fdf4';
             gsap.fromTo(
               '#hero-name',
-              { color: '#f0fdf4' },
+              { color: baseColor },
               {
                 color: '#86efac',
                 duration: 0.32,
@@ -88,7 +90,7 @@
                 yoyo: true,
                 repeat: 1,
                 onComplete() {
-                  gsap.set('#hero-name', { color: '#f0fdf4' });
+                  gsap.set('#hero-name', { clearProps: 'color' });
                 },
               }
             );
