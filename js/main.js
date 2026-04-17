@@ -85,9 +85,9 @@
     const btn = document.getElementById('theme-toggle');
     if (!btn) return;
 
-    // Restore saved preference (default: dark)
-    const saved = localStorage.getItem('theme');
-    if (saved) document.documentElement.dataset.theme = saved;
+    // Restore saved preference; fall back to dark
+    const saved = localStorage.getItem('theme') || 'dark';
+    document.documentElement.dataset.theme = saved;
 
     btn.addEventListener('click', () => {
       const current = document.documentElement.dataset.theme || 'dark';
