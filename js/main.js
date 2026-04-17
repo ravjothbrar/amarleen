@@ -80,8 +80,30 @@
     });
   }
 
+  /* ── Dark / light theme toggle ── */
+  function initThemeToggle() {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+
+    // Restore saved preference (default: dark)
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.dataset.theme = saved;
+
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.dataset.theme || 'dark';
+      const next    = current === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('theme', next);
+
+      // Clear any GSAP inline colour on the hero name so the CSS var takes over
+      const heroName = document.getElementById('hero-name');
+      if (heroName) heroName.style.removeProperty('color');
+    });
+  }
+
   /* ── Init ── */
   function init() {
+    initThemeToggle();
     initScrollProgress();
     initMobileMenu();
     initSectionTracking();
